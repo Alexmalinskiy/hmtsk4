@@ -10,10 +10,7 @@ def main():
     while True:
         inp = input_data("Введите команду. Для выхода наберите q. Список всех команд - help",False)
         if str(inp).lower() == "q":
-            print("Сеанс завершён.")
-            print("На выходе документы имеют вид:", documents)
-            print("На выходе полки имеют вид:", directories)
-
+            show_result(documents,directories)
             break
         
         elif str(inp).lower() == "help": 
@@ -201,5 +198,10 @@ def remove_doc_by_number(documents,directories,num):
     else:
         print("Документ не найден")    
     return documents, directories
+
+def show_result(documents,directories):
+    print("Сеанс завершён.")
+    print("На выходе документы имеют вид:", documents)
+    print("На выходе полки имеют вид:", directories)
 
 main()
