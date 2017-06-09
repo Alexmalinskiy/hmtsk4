@@ -23,9 +23,9 @@ def main():
             num = input_data("Введите номер документа",True)        
             if num == None:
                 print("Неверно введен номер документа")
-                exit()
-            Man = get_person_by_doc_number(documents, num)
-            check_return(Man)
+            else:
+                Man = get_person_by_doc_number(documents, num)
+                check_return(Man)
             
         elif str(inp).lower() == "l":
             list_all_docs(documents)
@@ -33,10 +33,10 @@ def main():
         elif str(inp).lower() == "s":
             num = input_data("Введите номер документа",True)        
             if num == None:
-                print("Неверно введен номер документа")
-                exit()          
-            key = get_shelf_by_doc_number(directories, num)
-            check_return(key)
+                print("Неверно введен номер документа")         
+            else:
+                key = get_shelf_by_doc_number(directories, num)
+                check_return(key)
             
         elif str(inp).lower() == "a":
             documents, directories = add_doc(documents, directories)
@@ -45,8 +45,8 @@ def main():
             num = input_data("Введите номер документа",True)        
             if num == None:
                 print("Неверно введен номер документа")
-                exit()  
-            documents, directories = remove_doc_by_number(documents, directories, num)
+            else:
+                 documents, directories = remove_doc_by_number(documents, directories, num)
         elif str(inp).lower() == "m":
             directories = move_doc(documents,directories)
             
@@ -54,8 +54,8 @@ def main():
             shelf_num = input_data("Введите номер полки",True)
             if shelf_num == None:
                 print("Неверно введён номер полки")
-                exit()
-            directories = add_directory(directories,shelf_num)
+            else:
+                directories = add_directory(directories,shelf_num)
         else:
             print("Неверная команда!")
 
